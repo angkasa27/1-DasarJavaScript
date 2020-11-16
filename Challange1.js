@@ -7,18 +7,15 @@ hitungPPN = (p, l, harga) => {
   return total.toString();
 };
 
-let total = hitungPPN(20.5, 30, 1500000);
-console.log(
-  "Rp" +
-    total
-      .split("")
-      .reverse()
-      .join("")
-      .match(/.{1,3}/g)
-      .map((x) => x.split("").reverse().join(""))
-      .reverse()
-      .join(".")
-);
+let total = hitungPPN(20.5, 30, 1500000)
+  .split('')
+  .reverse()
+  .join('')
+  .match(/.{1,3}/g)
+  .map((x) => x.split('').reverse().join(''))
+  .reverse()
+  .join('.');
+console.log('Rp' + total);
 
 //output "Rp1.060.875.000"
 

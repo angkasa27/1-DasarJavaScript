@@ -19,8 +19,12 @@ class Tabung extends Lingkaran {
     this.t = tinggi;
   }
 
+  luasSelimut() {
+    return this.t * this.keliling();
+  }
+
   luasPermukaan() {
-    return 2 * this.luas() + this.t * this.keliling();
+    return 2 * this.luas() + this.luasSelimut();
   }
 
   volume() {
@@ -39,8 +43,12 @@ class Kerucut extends Lingkaran {
     }
   }
 
+  luasSelimut() {
+    return this.phi * this.r * this.s;
+  }
+
   luasPermukaan() {
-    return this.luas() + this.phi * this.r * this.s;
+    return this.luas() + this.luasSelimut();
   }
 
   volume() {
@@ -62,3 +70,32 @@ class Bola extends Lingkaran {
     return (this.luas() * this.r * 4) / 3;
   }
 }
+
+let hitung = new Tabung(7, 10);
+
+console.log('Tabung r=7 t=10');
+console.log('Luas Selimut=' + hitung.luasSelimut());
+console.log('Luas Permukaan=' + hitung.luasPermukaan());
+console.log('Volume=' + hitung.volume());
+console.log('-----------------------');
+
+hitung = new Kerucut(7, 10);
+
+console.log('Kerucut r=7 t=10 s=?');
+console.log('Luas Selimut=' + hitung.luasSelimut());
+console.log('Luas Permukaan=' + hitung.luasPermukaan());
+console.log('Volume=' + hitung.volume());
+console.log('-----------------------');
+
+hitung = new Kerucut(7, 10, 10);
+console.log('Kerucut r=7 t=10 s=10');
+console.log('Luas Selimut=' + hitung.luasSelimut());
+console.log('Luas Permukaan=' + hitung.luasPermukaan());
+console.log('Volume=' + hitung.volume());
+console.log('-----------------------');
+
+hitung = new Bola(7, 10, 10);
+
+console.log('Tabung r=7 t=10');
+console.log('Luas Permukaan=' + hitung.luasPermukaan());
+console.log('Volume=' + hitung.volume());
